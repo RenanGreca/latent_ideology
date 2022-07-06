@@ -1,4 +1,4 @@
-# latent_ideology
+# Latent ideology method
 Correspondence Analysis applied for calculating 'ideology scores' given an adjacency matrix.
 
 Method for applying the correspondence analysis method for the purpose of calculating 
@@ -31,3 +31,4 @@ There are a couple of things you can do here. You can:
 -  Given a 'connection dataframe', you can simple apply the function 'apply_method' and this will generate 2 dataframes: one for the score of the targets and one for the scores of the sources. 
 -  Altenatively, you can apply a simplified method by using the function 'apply_simplified_method'. Here, the source's scores are calculating by transposing the adjacency matrix and making reduction of dimensionality following the proccedures of [2].. instead of considering the score of the sources as the mean of the scores of the targets that had interacted with the source. 
     
+*Made with love by **Fede Moss***
