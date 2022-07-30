@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setuptools.setup(
     name='Latent ideology',                           # should match the package folder
     packages=['Latent ideology'],                     # should match the package folder
-    version='0.0.1',                                # important for updates
+    version='0.0.3',                                # important for updates
     license='MIT',                                  # should match your chosen license
     description='Latent ideology method',
     long_description=long_description,              # loads your README.md
@@ -31,6 +31,6 @@ setuptools.setup(
         'Programming Language :: Python :: 3.9',
     ],
     
-    download_url="https://github.com/fedemoss/latent_ideology/archive/refs/tags/0.0.1.tar.gz",
+    download_url="https://github.com/fedemoss/latent_ideology/archive/refs/tags/0.0.3.tar.gz",
 )
 
