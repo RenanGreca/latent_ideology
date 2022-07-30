@@ -16,7 +16,7 @@ Method for applying the correspondence analysis method for the purpose of calcul
   https://doi.org/10.48550/arXiv.2112.12137 (2021).
 
 
-#How to use
+## How to use
 
 It's simple, just 
 
@@ -41,7 +41,9 @@ Added some functionalities:
 
 -   You can now create an alternate dataframe indicating to which sources each target had interacted with. 
 
+And some changes: 
+
 -   Since we want a fixed number of sources, I switch the order of the filtering: the program first filter out targets that don't pass the minimum n-distinct sources to interact with, and then it consider the m-top sources threshold. This way, you can make sure that m is a fixed number. The other way around, you could end up with less sources than expected due to applying the the 'n-filter' to a reduced dataset. 
   
   
-Made with love by **Fede Moss***
+Made with love by **Fede Moss**
