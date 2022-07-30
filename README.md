@@ -30,5 +30,18 @@ There are a couple of things you can do here. You can:
 -  Given an adjacency matrix, calculate scores in 1 (or more) dimensions. 
 -  Given a 'connection dataframe', you can simple apply the function 'apply_method' and this will generate 2 dataframes: one for the score of the targets and one for the scores of the sources. 
 -  Altenatively, you can apply a simplified method by using the function 'apply_simplified_method'. Here, the source's scores are calculating by transposing the adjacency matrix and making reduction of dimensionality following the proccedures of [2].. instead of considering the score of the sources as the mean of the scores of the targets that had interacted with the source. 
-    
-*Made with love by **Fede Moss***
+
+## Updates
+
+### v0.0.3 (7/30/2022)
+
+Added some functionalities:
+
+-   If your input dataframe has a 'weight' column indicating the weight of the interaction between targets-sources, you can now specify it to save some running time.
+
+-   You can now create an alternate dataframe indicating to which sources each target had interacted with. 
+
+-   Since we want a fixed number of sources, I switch the order of the filtering: the program first filter out targets that don't pass the minimum n-distinct sources to interact with, and then it consider the m-top sources threshold. This way, you can make sure that m is a fixed number. The other way around, you could end up with less sources than expected due to applying the the 'n-filter' to a reduced dataset. 
+  
+  
+Made with love by **Fede Moss***
