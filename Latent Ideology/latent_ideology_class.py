@@ -71,17 +71,19 @@ class latent_ideology:
     keys_list = list(groups_dict_target.keys()) #users (keys)
     sources = []
     lengths = []
+    total_interactions = []
     
     for key in keys_list:
       source_list_index = list(groups_dict_target[key]) #sources list for each target 
       source_asocciated = []
       for s in source_list_index:
         source_asocciated.append(df.source[s])
+      total_interactions.append(len(source_list_index))
       sources.append(list(set(source_asocciated)))
       lengths.append(len(list(set(source_asocciated)))) #list of sources lenghts
-    data = {'target':keys_list, 'sources_associated':sources, 'total_retuits':lengths}#new df
-    df3 = pd.DataFrame(data).sort_values(by=['total_retuits'], ascending=False).reset_index(drop=True)
-    df_targets_associated = df3.query("total_retuits >= @n")
+    data = {'target':keys_list, 'sources_associated':sources, 'total_distinct_sources':lengths, 'total_interactions':total_interactions}#new df
+    df3 = pd.DataFrame(data).sort_values(by=['total_distinct_sources'], ascending=False).reset_index(drop=True)
+    df_targets_associated = df3.query("total_distinct_sources >= @n")
     targets_threshold_1 = list(df_targets_associated['target'])
     df_filtered_th1 = df_th0.query('(target == @targets_threshold_1)')
     
