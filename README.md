@@ -37,12 +37,12 @@ Cosiderations:
 
 **(please read the file latent_ideology_class.py for insights)**
 
--   The more you relax $n$ ($n>2$), the restricted it gets and the faster it runs. Simple. 
+-   The more you relax $n (n>2)$, the restricted it gets and the faster it runs. Simple. 
 -   Since $m$ is explicitly the number of columns of the matrix to further compute the method, the more restricted you get ($m$ small), the faster it runs.
 
 For comparison:
 
-I've run the package for a big connection dataset (1.5mill rows) with $n=10$ and $m=300$. This gave a (25000, 300) adjacency matrix and the final run time was around 35 sec. 
+I've run the package for a big connection dataset (1.5mill rows) with n=10 and m=300. This gave a (25000, 300) adjacency matrix and the final run time was around 35 sec. 
 
 ## Updates
 
@@ -57,6 +57,20 @@ Added some functionalities:
 And some changes: 
 
 -   Since we want a fixed number of sources, I switch the order of the filtering: the program first filter out targets that don't pass the minimum n-distinct sources to interact with, and then it consider the m-top sources threshold. This way, you can make sure that m is a fixed number. The other way around, you could end up with less sources than expected due to applying the the 'n-filter' to a reduced dataset. 
+
+### v0.0.4 (8/24/2022)
+
+Added:
+
+-    New parameter to play with. k let you put a threshold to the maximum interactions considered between target-sources. This sometimes accelerates the formation of non-unimodal distributions. Essential when studying polarization. In practice, k let you filter out outlier or non representatives targets. 
+
+-    'Total interaction' column added when building the adjacency matrix and setting ```detailed_target_list = True```
+
+Fixed:
+
+-    Wrong filtering when applying the '$n$ distinct sources to interact with' threshold. It only worked when setting detailed_target_list = True. 
+
+-    Added '.copy()' to the original input dataframe in the main functions. Original DataFrames were forced to change when renaming columns. Not anymore! (sorry 'bout that) 
 
 ---
   
