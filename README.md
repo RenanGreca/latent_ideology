@@ -62,15 +62,31 @@ And some changes:
 
 Added:
 
--    New parameter to play with. k let you put a threshold to the maximum interactions considered between target-sources. This sometimes accelerates the formation of non-unimodal distributions. Essential when studying polarization. In practice, k let you filter out outlier or non representatives targets. 
+-    New parameter 'k' to play with. k lets you put a threshold to the maximum interactions considered between target-sources. This sometimes accelerates the formation of non-unimodal distributions. Essential when studying polarization. In practice, k let you filter out outlier or non representatives targets. 
 
 -    'Total interaction' column added when building the adjacency matrix and setting ```detailed_target_list = True```
 
 Fixed:
 
--    Wrong filtering when applying the '$n$ distinct sources to interact with' threshold. It only worked when setting detailed_target_list = True. 
+-    Wrong filtering when applying the 'n distinct sources to interact with' threshold. It only worked when setting detailed_target_list = True. 
 
 -    Added '.copy()' to the original input dataframe in the main functions. Original DataFrames were forced to change when renaming columns. Not anymore! (sorry 'bout that) 
+
+### v0.0.5 (9/12/2022)
+
+Added:
+
+-    New parameter 'drop'. Put a list of the targets/sources you want to drop before computing the scores.
+
+-    Change 'detailed_target_list' to 'detailed_lists'. If set to True, returns two dataframes: one associated with the targets (same as before) and one associated with the sources.
+
+-    New parameter 'weighted_mean' in the .apply_method() function. Now you can choose between the classic non-weighted mean or the weighted one to compute the source's scores.
+
+-    Now you can return the detailed_lists (old detailed_target_list parameter) directly in the .apply_method() funciton. No need to run the .make_adjacency() function anymore!
+
+Fixed:
+
+-    When k was set to None, it returned an error. Fixed that.
 
 ---
   
