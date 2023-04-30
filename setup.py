@@ -31,8 +31,6 @@ setuptools.setup(
         'Programming Language :: Python :: 3.9',
     ],
     
-    download_url="download_url="https://github.com/fedemoss/-source-code-latent-method/archive/refs/tags/0.0.8.tar.gz",
-)
-",
+    download_url="https://github.com/fedemoss/-source-code-latent-method/archive/refs/tags/0.0.8.tar.gz",
 )
 
